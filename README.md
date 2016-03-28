@@ -18,6 +18,18 @@ Note that it just emulates the behavior of real world firewall, but cannot do so
 * To identify Outgoing DNS Query, parse the DNS datagram and check whether QR = 0 && QDCOUNT == 0x0001 && ANCOUNT == 0 && NSCOUNT == 0.
 * Identify Outgoing TCP Connection: In general, we use state machine to keep track of outgoing TCP connection. This can be divided into  2 parts: 
     1. Identify TCP Connection Establishment
-    
+        ![Normal establishment](https://github.com/wyqwyq/Firewall-Emulator/blob/master/img1.jpg "Normal establishment")
+        ![Exceptional establishment](https://github.com/wyqwyq/Firewall-Emulator/blob/master/img2.jpg "Exceptional establishment")
+        ![Exceptional establishment](https://github.com/wyqwyq/Firewall-Emulator/blob/master/img3.jpg "Exceptional establishment")
     2. Identify TCP Connection Termination
+        * Normal termination (Active/Passive)
+![Normal termination Active](https://github.com/wyqwyq/Firewall-Emulator/blob/master/img4.jpg "Normal termination Active")
+![Normal termination Passive](https://github.com/wyqwyq/Firewall-Emulator/blob/master/img5.jpg "Normal termination Passive")
+        * Simultaneous termination (rarely happen)
+![Simultaneous termination](https://github.com/wyqwyq/Firewall-Emulator/blob/master/img6.jpg "Simultaneous termination")
+        * Exceptional termination--Active(passive is similar, not displayed)
+![Exceptional termination Active 1](https://github.com/wyqwyq/Firewall-Emulator/blob/master/img7.jpg "Exceptional termination Active 1")
+![Exceptional termination Active 2](https://github.com/wyqwyq/Firewall-Emulator/blob/master/img8.jpg "Exceptional termination Active 2")
+![Exceptional termination Active 3](https://github.com/wyqwyq/Firewall-Emulator/blob/master/img9.jpg "Exceptional termination Active 9")
+![Exceptional termination Active 4](https://github.com/wyqwyq/Firewall-Emulator/blob/master/img10.jpg "Exceptional termination Active 4")
 
